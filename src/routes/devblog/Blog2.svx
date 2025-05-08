@@ -1,0 +1,9 @@
+---
+title: "Blogg"
+date: "2025-05-07"
+--- 
+Jag har gjort så att när man svarar på frågorna så kommer det upp en alert som visar om mad hade rätt eller fel, 
+sedan har jag börjat fixa en poäng stege som visar priserna för varje fråga som man svarar rätt på. 
+Men jag måste fixa så att man tydligt ser vilket steg man är på. 
+Jag har även lagt till många nya frågor med mer variation på frågorna till skilland från tidigare. 
+Jag har även lagt mer fokus på att göra stylingen snygg och tydligare. 

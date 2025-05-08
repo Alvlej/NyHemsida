@@ -1,0 +1,7 @@
+---
+title: "Blogg"
+date: "2025-04-23"
+---
+Jag har gjort en start screen som man börjar med att trycka på start för att komma till själva spelet, sedan har jag gjort styling på spelet såsom att det är fyra rutor där svarsalternativen står i. 
+
+
