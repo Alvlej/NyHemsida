@@ -180,9 +180,11 @@
 }
 .box:hover{
         transform: scale(1.05);
+
      }
     .box{ width: 100%; border-radius: 20px; border: 2px solid darkgoldenrod;background-color: darkblue;box-shadow: 4px 8px 0px rgba(0,0,0,0.10);}
     .box { flex-grow:2; transition: 1000ms flex; }
+    
 
 .fråga{
     background-color: orange;
