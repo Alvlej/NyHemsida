@@ -107,7 +107,7 @@
     Tid kvar: {timeLeft} sekunder
 </div>
 
-<div class = "andrachansen" on:click={}>
+<div class = "andrachansen">
     
     <img src="https://images.vexels.com/media/users/3/129190/isolated/preview/c3e00e75d5fb9997379e299db384f34c-50-percent-orange-ring-infographic.png" alt="Andra chansen"/>
 
