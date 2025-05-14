@@ -12,8 +12,10 @@
                 {fråga: "Vilket land är känd för att tillvärka driftsäkra bilar”?", svar: "Japan" , alternativ: ["Japan", "USA", "Sverige", "Italien"]},
                 {fråga: "Vilket land har flest invånare i världen?", svar: "Indien" , alternativ: ["Ryssland", "USA", "Kina", "Indien"]},
                 {fråga: "Hur många olika smaker har Nocco producerat?", svar: "40" , alternativ: ["10", "25", "30", "40"]},
-                {fråga: "Vilen är världens mest sålda bil genom tiderna?", svar: "Toyota Corolla" , alternativ: ["Honda Civic", "Toyota Corolla", "Lamborginhi Urus", "Mercedes-Benz G63",]},
+                {fråga: "Vilken är världens mest sålda bil genom tiderna?", svar: "Toyota Corolla" , alternativ: ["Honda Civic", "Toyota Corolla", "Lamborginhi Urus", "Mercedes-Benz G63",]},
                 {fråga: "Vilket är max HCP i golf?", svar: "54" , alternativ: ["42", "52", "31", "54",]},
+                {fråga: "vilken är den mäst köpta pizzan i världen?", svar: "Vesuvio" , alternativ: ["Havaii", "Kebabpizza", "Margherita", "Vesuvio",]},
+
 ]
 
     let priser = [{pris:"1 000 000", ratt:false},
@@ -29,6 +31,7 @@
             
 
     let fråga = frågor[0];
+    
 
     function kontrolleraSvar(alt) {
         if (alt == fråga.svar) {
@@ -83,28 +86,32 @@
             } else {
                 clearInterval(timer);
                 alert("Tiden är slut!");
-                nyFråga(); 
+                nyFråga();   
             }
-        }, 1000); // Uppdatera varje sekund
+        }, 1000); 
     }
 
     function resetTimer() {
         clearInterval(timer);
-        timeLeft = 30; // Återställ tiden
+        timeLeft = 30; 
         startTimer();
     }
 
+    function andra(){
+
+    }
+
 </script>
-
-<main>
-
-</main>
-
 
 <div class="timer">
     Tid kvar: {timeLeft} sekunder
 </div>
 
+<div class = "andrachansen" on:click={}>
+    
+    <img src="https://images.vexels.com/media/users/3/129190/isolated/preview/c3e00e75d5fb9997379e299db384f34c-50-percent-orange-ring-infographic.png" alt="Andra chansen"/>
+
+</div>
 
 <div class = "container">
     <div class= "fråga">{fråga.fråga}</div>
@@ -204,11 +211,7 @@
     border-radius: 20px;
     padding: 50px;
     font-size: xx-large;
- 
-
 }
-
-
 
 li {
     padding-bottom: 60px;
@@ -231,6 +234,18 @@ li {
         text-align: center;
         margin-top: 20px;
     }
+.andrachansen{
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    position: absolute;
+    margin-top: 10%;
+    margin-left: 5%;
+    border-radius: 50%;
+    
+    
+    
+}
 
 </style>
 
