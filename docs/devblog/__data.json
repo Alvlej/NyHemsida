@@ -1,1 +1,1 @@
-{"type":"data","nodes":[null,{"type":"data","data":[{"posts":1},[2,6,9],{"slug":3,"title":4,"date":5},"Blog3","Blogg","2025-05-14",{"slug":7,"title":4,"date":8},"Blog2 copy","2025-05-07",{"slug":10,"title":4,"date":11},"Blog1","2025-04-23"],"uses":{}}]}
+{"type":"data","nodes":[null,{"type":"data","data":[{"posts":1},[2,6,9,12],{"slug":3,"title":4,"date":5},"Blog4","Blogg","2025-05-26",{"slug":7,"title":4,"date":8},"Blog3","2025-05-14",{"slug":10,"title":4,"date":11},"Blog2 copy","2025-05-07",{"slug":13,"title":4,"date":14},"Blog1","2025-04-23"],"uses":{}}]}

@@ -7,7 +7,7 @@
 
 <div class = "ruta"> 
     <a href="{base}\spela">
-        <p>Spela</p>
+        <p class = "spel">Spela</p>
     </a>
 
 </div>
@@ -39,7 +39,18 @@ main{
     border-radius: 5px;
     justify-self: center;
     align-self: center;
+    height: 100px;
+    width: 200px;
+    
+
+    
     
 }
-
+.spel{
+    text-align: center;
+    font-size: 70px;
+    color: white;
+    font-weight: 800;
+    padding-top: 30px;
+}
 </style>

@@ -1,0 +1,5 @@
+---
+title: "Blogg"
+date: "2025-05-26"
+--- 
+Just nu försöker jag att få till de sista detaljerna i spelet och fixa 50/50 funktionen och timern som jag inte fått till att fungera ännu. Jag har försökt fixa timer funktionen men den vill bara inte fungera men ska försöka få den klar till redovisningen

@@ -1,4 +1,4 @@
-import{s as o,n as e}from"./LWrm9RuP.js";import{S as l,i,d as g,b as m,c as d,g as p,h as f}from"./CvcYP0qD.js";function c(n){let t,r=`Jag har gjort så att när man svarar på frågorna så kommer det upp en alert som visar om mad hade rätt eller fel,
+import{s as o,n as e}from"./qK2_OJlR.js";import{S as l,i,d as g,b as m,c as d,g as p,h as f}from"./eqbNRN0k.js";function c(n){let t,r=`Jag har gjort så att när man svarar på frågorna så kommer det upp en alert som visar om mad hade rätt eller fel,
 sedan har jag börjat fixa en poäng stege som visar priserna för varje fråga som man svarar rätt på.
 Men jag måste fixa så att man tydligt ser vilket steg man är på.
 Jag har även lagt till många nya frågor med mer variation på frågorna till skilland från tidigare.

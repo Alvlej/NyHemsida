@@ -1,9 +1,9 @@
 <script>
-	import { filter } from "@skeletonlabs/skeleton";
+	
 
 
     let frågor = [{fråga: "Vilket av alternativen är världens snabbaste bil?", svar: "Koenigsegg Agera RS" , alternativ: ["Lamborghini huracán", "Pagani huayra", "Koenigsegg Agera RS", "Bugatti Chiron"]},
-                {fråga: "Vilket bilmärke har fyra ringar i sin logga?", svar: "Audi" , alternativ: ["BMW", "Audi", "Volkswagen", "Mercedes"]},
+                {fråga: "Vilket bilmärke har fyra ringar i sin logotyp?", svar: "Audi" , alternativ: ["BMW", "Audi", "Volkswagen", "Mercedes"]},
                 {fråga: "Vilket bilmärke har en logotyp med en tjur?", svar: "Lamborghini" , alternativ: ["Lamborghini", "Porsche", "Ferrari", "Maserati"]}
                 ,{fråga: "Vilken bil är känd som 'The Godfather'?", svar: "Cadillac" , alternativ: ["Cadillac", "Chevrolet", "Ford", "Buick"]},
                 {fråga: "Vilket bilmärke tillverkar modellen “911”?", svar: "Porsche" , alternativ: ["Mercedes-Benz", "Volvo", "Ford", "Porsche"]},
@@ -13,12 +13,13 @@
                 {fråga: "Vilket land har flest invånare i världen?", svar: "Indien" , alternativ: ["Ryssland", "USA", "Kina", "Indien"]},
                 {fråga: "Hur många olika smaker har Nocco producerat?", svar: "40" , alternativ: ["10", "25", "30", "40"]},
                 {fråga: "Vilken är världens mest sålda bil genom tiderna?", svar: "Toyota Corolla" , alternativ: ["Honda Civic", "Toyota Corolla", "Lamborginhi Urus", "Mercedes-Benz G63",]},
-                {fråga: "Vilket är max HCP i golf?", svar: "54" , alternativ: ["42", "52", "31", "54",]},
+                {fråga: "Vilket är max HCP i golf?", svar: "54" , alternativ: ["42", "52", "54", "31",]},
                 {fråga: "vilken är den mäst köpta pizzan i världen?", svar: "Vesuvio" , alternativ: ["Havaii", "Kebabpizza", "Margherita", "Vesuvio",]},
 
 ]
 
     let priser = [{pris:"1 000 000", ratt:false},
+                {pris:"750 000", ratt:false},
                 {pris:"500 000", ratt:false},
                 {pris:"250 000", ratt:false},
                 {pris:"100 000", ratt:false},
@@ -31,15 +32,15 @@
             
 
     let fråga = frågor[0];
-    
 
+    let återståendeFrågor = [...frågor]; 
     function kontrolleraSvar(alt) {
         if (alt == fråga.svar) {
             for (let i = priser.length; i > 0; i--) {
                 if (priser[i-1].ratt == false) {
                     priser[i-1].ratt = true;
                     priser = priser
-                    console.log(priser)
+                    frågor = frågor.filter(f => f != fråga); 
                     break;
                 }
             }
@@ -51,17 +52,17 @@
                 if (priser[i].ratt == true) {
                     priser[i].ratt = false;
                     priser = priser
-                    console.log(priser)
                     break;
                 }
             }
         }
 
-        if (priser.filter(pris => pris.ratt == true).length >=9) {
+        if (priser.filter(pris => pris.ratt == true).length >=10) {
             alert("Grattis du har vunnit 1 000 000 kr!");
         }
 
         nyFråga()
+        
     }
 
     function nyFråga() {
@@ -91,15 +92,8 @@
         }, 1000); 
     }
 
-    function resetTimer() {
-        clearInterval(timer);
-        timeLeft = 30; 
-        startTimer();
-    }
-
-    function andra(){
-
-    }
+    
+    
 
 </script>
 
@@ -108,6 +102,8 @@
 </div>
 
 <div class = "andrachansen">
+
+    
     
     <img src="https://images.vexels.com/media/users/3/129190/isolated/preview/c3e00e75d5fb9997379e299db384f34c-50-percent-orange-ring-infographic.png" alt="Andra chansen"/>
 
@@ -125,9 +121,13 @@
 </div>
 
 <ul class = "score">
+    <ul class = "bank"> 
+        Bank
+    </ul>
     {#each priser as pris}
         <li class:correct = {pris.ratt}>💰{pris.pris} kr</li>
     {/each}
+ 
 </ul>
 
 <div class="backdrop">
@@ -135,7 +135,6 @@
 </div>
 
 <style>
-     
     .backdrop{
     background-size: cover;
     position: fixed;
@@ -162,10 +161,8 @@
     border-radius: 20px;
     font-size: larger;
     font-weight: 800;
-        
     
-    
-    
+
 }
 
 .backdrop img{
@@ -214,7 +211,7 @@
 }
 
 li {
-    padding-bottom: 60px;
+    padding-bottom: 50px;
     color: white;
     font-size: x-large;
     font-weight: 800;
@@ -222,8 +219,8 @@ li {
 }
 .correct {
     color: greenyellow;
-    font-size: xx-large;
-    font-weight: 1000;
+    font-size: x-large;
+    font-weight: 1500;
 }
 
 .timer {
@@ -237,15 +234,21 @@ li {
 .andrachansen{
     width: 100px;
     height: 100px;
-    background-color: white;
+    background-color: darkblue;
     position: absolute;
     margin-top: 10%;
     margin-left: 5%;
     border-radius: 50%;
-    
-    
-    
 }
+.bank{
+    font-weight: 600;
+    font-size: x-large;
+    color: white;
+    text-align: center;
+    margin-bottom: 50px;
+    margin-top: -40px;
+}
+
 
 </style>
 
