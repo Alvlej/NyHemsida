@@ -68,12 +68,16 @@
     function nyFråga() {
         let randomIndex = Math.floor(Math.random() * frågor.length);
         fråga = frågor[randomIndex];
+        synligaAlternativ = [...fråga.alternativ];
     }
 
     import { onMount } from "svelte";
 
-    let timeLeft = 30; 
+    let timeLeft = 300; 
     let timer;
+    
+
+    
 
    
     onMount(() => {
@@ -92,8 +96,16 @@
         }, 1000); 
     }
 
-    
-    
+     function andraChansen() {
+        let fel = synligaAlternativ.filter(alt => alt !== fråga.svar);
+        let attTaBort = [];
+        while (attTaBort.length < 2 && fel.length > 0) {
+            let i = Math.floor(Math.random() * fel.length);
+            attTaBort.push(fel[i]);
+            fel.splice(i, 1);
+        }
+        synligaAlternativ = synligaAlternativ.filter(alt => !attTaBort.includes(alt));
+    }
 
 </script>
 
@@ -101,21 +113,21 @@
     Tid kvar: {timeLeft} sekunder
 </div>
 
-<div class = "andrachansen">
+<button class = "andrachansen" on:click={andraChansen}>
 
     
     
     <img src="https://images.vexels.com/media/users/3/129190/isolated/preview/c3e00e75d5fb9997379e299db384f34c-50-percent-orange-ring-infographic.png" alt="Andra chansen"/>
 
-</div>
+</button>
 
 <div class = "container">
     <div class= "fråga">{fråga.fråga}</div>
     <div class="svarsAlt">
         {#each fråga.alternativ as alt}
-            <div class = "box"on:click={() => kontrolleraSvar(alt)}>
+            <button class = "box"on:click={() => kontrolleraSvar(alt)}>
                 <p>{alt}</p>
-            </div>
+            </button>
         {/each}
     </div>
 </div>
